@@ -1,0 +1,18 @@
+# Theme: light, large and friendly.
+[theme]
+base = "light"
+primaryColor = "#2563EB"
+backgroundColor = "#F4F8FF"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#1B2433"
+font = "sans serif"
+
+[server]
+fileWatcherType = "none"       # stops the harmless 'No module named torchvision' log spam from the transformers package
+enableStaticServing = true      # lets you use your own photos: static/bg.jpg or static/bg_<page>.jpg
+
+[client]
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false

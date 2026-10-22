@@ -1,0 +1,39 @@
+# Python (including a virtual environment created in the project root)
+__pycache__/
+*.py[cod]
+.venv/
+Lib/
+Lib64/
+Scripts/
+Include/
+share/
+pyvenv.cfg
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+
+# Your libraries: downloaded articles, indexes, chat logs (rebuilt from the app)
+workspaces/
+knowledge_base/
+knowledge_base_clean/
+vectordb/
+embeddings/
+chunks/
+
+# Secrets and local settings
+.env
+*.key
+.streamlit/secrets.toml
+
+# Optional: your own background photos
+static/*.jpg
+static/*.jpeg
+static/*.png
+static/*.webp
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

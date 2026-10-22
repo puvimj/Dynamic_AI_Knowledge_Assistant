@@ -1,0 +1,34 @@
+# Dynamic AI Knowledge Assistant - dependencies
+# Tested with Python 3.13 on: requests 2.34, beautifulsoup4 4.15, numpy 2.5, scipy 1.18,
+# scikit-learn 1.9, joblib 1.6, faiss-cpu 1.15, chromadb 1.5.
+# NOT tested here (no Hugging Face / GPU access): sentence-transformers, transformers, bitsandbytes.
+
+# --- Phase 1: wikipedia_kb.py --------------------------------------------------
+requests>=2.31
+
+# --- Phases 2-3: kb_clean.py ---------------------------------------------------
+beautifulsoup4>=4.12          # optional (regex fallback exists), recommended for HTML removal
+
+# --- Phase 4: kb_chunking.py ---------------------------------------------------
+numpy>=1.26
+scipy>=1.11
+scikit-learn>=1.3
+
+# --- Phases 5-6: kb_embed.py ---------------------------------------------------
+sentence-transformers>=3.0    # MiniLM / BGE embeddings (pulls in torch)
+joblib>=1.3
+faiss-cpu>=1.7.4
+chromadb>=1.0
+
+# --- Phases 7-9: kb_retrieval.py, kb_prompts.py, kb_generate.py ----------------
+# Nothing extra for LLMs served through Ollama / OpenAI-compatible APIs (uses `requests`).
+# Only for `--backend hf` (run Llama 3 / Gemma / Mistral inside Python on a GPU):
+# transformers>=4.44
+# accelerate>=0.33
+# bitsandbytes>=0.43          # 4-bit loading so 7-9B models fit a free Colab T4
+
+# --- Phase 10: Streamlit dashboard (app.py, pages/, app_pages/) -----------------
+# Tested with streamlit 1.66 and pandas 3.0 (uses st.bar_chart(sort=...), horizontal bars, st.write_stream).
+streamlit>=1.50
+pandas>=2.0
+plotly>=5.20
